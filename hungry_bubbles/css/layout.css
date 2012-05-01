@@ -1,0 +1,45 @@
+#game_content {
+	display: block;
+	position: relative;
+	width: 1024px;
+	height: 768px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.button {
+	float: left;
+	margin: 0 20px 0 0;
+	position: relative;
+}
+
+.button a {
+	background: #f3f3f3; /* Fallback */
+	background: -moz-linear-gradient(top, #f3f3f3 0%, #ececec 100%); /* FF 3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f3f3f3), color-stop(100%,#ececec)); /* Chrome, Safari 4+ */
+	background: -webkit-linear-gradient(top, #f3f3f3 0%,#ececec 100%); /* Chrome 10+, Safari 5.1+ */
+	background: -o-linear-gradient(top, #f3f3f3 0%,#ececec 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #f3f3f3 0%,#ececec 100%); /* IE10+ */
+	background: linear-gradient(top, #f3f3f3 0%,#ececec 100%); /* W3C */
+	
+	border: 1px solid;
+	border-color: #fff #c9c9c9 #c9c9c9 #fff;
+	border-radius: 5px;
+	display: block;
+	font: 14px 'Droid Serif', sans-serif;
+	padding: 14px 20px;
+	margin-bottom: 5px;
+	text-shadow: 0 1px 0 #fff;
+}
+
+.button a:active {
+	-webkit-box-shadow: inset 1px 1px 5px #ccc;
+	-moz-box-shadow: inset 1px 1px 5px #ccc;	
+	box-shadow: inset 1px 1px 5px #ccc;	
+}
+
+.button a:hover {
+	color: #AC0649;
+	border-radius: 10px 0 10px 0;
+	opacity: 0.75;
+}
