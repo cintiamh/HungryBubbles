@@ -38,7 +38,6 @@ void setup() {
 	}
 	else if (level == 2) {
 		buildLevel2();
-		
 	}
 	else if (level == 3) {
 		buildLevel3();
@@ -378,19 +377,15 @@ void checkWallCollision(Sphere s) {
 		//get the smallest number
 		
 		if (xUpBounce || xDownBounce || yUpBounce || yDownBounce) {
-			//println(xUpDiff + ", " + yUpDiff + ", " + xDownDiff + ", " + yDownDiff);
 			if (yUpDiff < yDownDiff && yUpDiff < xUpDiff && yUpDiff < xDownDiff) {
-			//if (xUpBounce) {
 				s.setVelocity(s.velocity.x, s.velocity.y * - 1 * DRAG);
 				s.location.y = wall1.ymax + s.radius;
 			}
 			else if (yDownDiff < yUpDiff && yDownDiff < xUpDiff && yDownDiff < xDownDiff) {
-			//else if (xDownBounce) {
 				s.setVelocity(s.velocity.x, s.velocity.y * - 1 * DRAG);
 				s.location.y = wall1.ymin - s.radius;
 			}
 			else if (xUpDiff < yUpDiff && xUpDiff < yDownDiff && xUpDiff < xDownDiff) {
-			//else if (yUpBounce) {
 				s.setVelocity(s.velocity.x * -1 * DRAG, s.velocity.y);
 				s.location.x = wall1.xmax + s.radius;
 			}
