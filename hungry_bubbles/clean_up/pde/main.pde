@@ -45,9 +45,6 @@ void setup() {
 	}
 	
 	calculateTotalVol();
-	//for (int i = 0; i < 4; i++) {
-		//addNewSphere(new Sphere(random(30 + i, width - 30 -i), random(30 + i, height - 30 - i), 30 + i *10));
-	//}
 }
 
 void buildLevel1() {
@@ -216,11 +213,14 @@ void buildLevel3() {
 	addNewSphere(new Sphere(64*15, 64*11, 6));
 }
 
+// spheres array has all the spheres but the main Sphere
+// spheres array has all the spheres including the main Sphere
 void addNewSphere(Sphere newSphere) {
 	spheres.add(newSphere);
 	allSpheres.add(newSphere);
 }
 
+// Check the total mass, to calculate the 90% is reached
 void calculateTotalVol() {
 	for (int i = 0; i < allSpheres.size(); i++) {
 		Sphere sphere1 = (Sphere) allSpheres.get(i);
@@ -255,11 +255,11 @@ void draw() {
 	//checkWallCollision();
 }
 
+// Every time the mouse is clicked, it spills a small particle from the main sphere
+// and moves to the opposite direction.
 void mouseClicked() {
 	mousePos.x = mouseX;
 	mousePos.y = mouseY;
-	
-	//println(mousePos.x + ", " + mousePos.y);
 	
 	if (mainSphere.radius > 0) {
 		mainSphere.calculateScales(mousePos);
@@ -288,7 +288,6 @@ void mouseClicked() {
 		// Instantiating the particle.
 		Sphere particle = new Sphere(mainSphere.location.x + partX, mainSphere.location.y + partY, partRadius);
 		particle.setVelocity(mainSphere.vscale.x * PARTICLE_SPEED, mainSphere.vscale.y * PARTICLE_SPEED);
-		//spheres.add(particle);
 		addNewSphere(particle); 
 	}
 }
